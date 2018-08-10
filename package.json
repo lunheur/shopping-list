@@ -13,6 +13,10 @@
   },
   "author": "Victor Lopez",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lunheur/shopping-list.git"
+  },
   "devDependencies": {
     "cypress": "^3.0.3",
     "nodemon": "^1.18.3",
