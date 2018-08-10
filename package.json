@@ -1,0 +1,36 @@
+{
+  "name": "shopping-list",
+  "version": "1.0.0",
+  "description": "Shopping List app to test MERN",
+  "main": "server.js",
+  "scripts": {
+    "install": "npm install && npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Victor Lopez",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^3.0.3",
+    "nodemon": "^1.18.3",
+    "standard": "^11.0.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^3.6.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.7"
+  },
+  "standard": {
+    "env": {
+      "mocha": true
+    },
+    "ignore": [
+      "node_modules/",
+      "client/node_modules/"
+    ]
+  }
+}
