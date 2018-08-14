@@ -11,29 +11,29 @@ import {
 } from 'reactstrap'
 
 class AppNavbar extends Component {
-  state = {
-    isOpen: false
+  constructor (props) {
+    super(props)
+    this.state = { isOpen: false }
+    this.toggle = this.toggle.bind(this)
   }
 
-  toggle = () => {
+  toggle () {
     this.setState({
       isOpen: !this.state.isOpen
     })
   }
 
-  render() {
+  render () {
     return (
       <div>
-        <Navbar color="dark" dark expand="sm" className="mb-5">
+        <Navbar color='dark' dark expand='sm' className='mb-5'>
           <Container>
-            <NavbarBrand href="/">Shopping List</NavbarBrand>
+            <NavbarBrand href='/'>Shopping List</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="ml-auto" navbar>
+              <Nav className='ml-auto' navbar>
                 <NavItem>
-                  <NavLink href="https://github.com/lunheur">
-                    Github
-                  </NavLink>
+                  <NavLink href='https://github.com/lunheur'>Github</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
