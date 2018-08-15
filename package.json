@@ -4,7 +4,7 @@
   "description": "Shopping List app to test MERN",
   "main": "server.js",
   "scripts": {
-    "install": "npm install && npm install --prefix client",
+    "install-all": "npm install && npm install --prefix client",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
