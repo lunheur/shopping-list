@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import AppNavbar from './components/AppNavbar'
-import ShoppingList from './components/ShoppingList'
+import ShoppingList from './components/shopping_list/ShoppingList'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 
