@@ -43,8 +43,8 @@ class ShoppingList extends Component {
             {items.map(({ id, name }) => (
               <CSSTransition key={id} timeout={500} classNames='fade'>
                 <ListGroupItem>
-                  <RemoveItemButton itemId={id} onRemoveItem={this.handleRemoveItem} />
                   {name}
+                  <RemoveItemButton itemId={id} onRemoveItem={this.handleRemoveItem} />
                 </ListGroupItem>
               </CSSTransition>
             ))}
