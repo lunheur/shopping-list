@@ -1,23 +1,25 @@
 import React, { Component } from 'react'
 import { Container, ListGroup, ListGroupItem } from 'reactstrap'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import PropTypes from 'prop-types'
+
 import uuid from 'uuid'
+
+import { connect } from 'react-redux'
+import { getItems } from '../../actions/ItemActions'
+
 import AddItemButton from './AddItemButton'
 import RemoveItemButton from './RemoveItemButton'
 
 class ShoppingList extends Component {
   constructor (props) {
     super(props)
-    this.state = {
-      items: [
-        { id: uuid(), name: 'Eggs' },
-        { id: uuid(), name: 'Milk' },
-        { id: uuid(), name: 'Steak' },
-        { id: uuid(), name: 'Water' }
-      ]
-    }
     this.handleAddItem = this.handleAddItem.bind(this)
     this.handleRemoveItem = this.handleRemoveItem.bind(this)
+  }
+
+  componentDidMount () {
+    this.props.getItems()
   }
 
   handleAddItem (name) {
@@ -34,7 +36,7 @@ class ShoppingList extends Component {
   }
 
   render () {
-    const { items } = this.state
+    const { items } = this.props.item
     return (
       <Container>
         <AddItemButton onAddItem={this.handleAddItem} />
@@ -44,7 +46,10 @@ class ShoppingList extends Component {
               <CSSTransition key={id} timeout={500} classNames='fade'>
                 <ListGroupItem>
                   {name}
-                  <RemoveItemButton itemId={id} onRemoveItem={this.handleRemoveItem} />
+                  <RemoveItemButton
+                    itemId={id}
+                    onRemoveItem={this.handleRemoveItem}
+                  />
                 </ListGroupItem>
               </CSSTransition>
             ))}
@@ -55,4 +60,13 @@ class ShoppingList extends Component {
   }
 }
 
-export default ShoppingList
+ShoppingList.propTypes = {
+  getItems: PropTypes.func.isRequired,
+  item: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+  item: state.item
+})
+
+export default connect(mapStateToProps, { getItems })(ShoppingList)
