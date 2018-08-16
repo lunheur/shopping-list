@@ -8,8 +8,7 @@ import uuid from 'uuid'
 import { connect } from 'react-redux'
 import { getItems } from '../../actions/ItemActions'
 
-import AddItemButton from './AddItemButton'
-import RemoveItemButton from './RemoveItemButton'
+import ItemList from '../ItemList'
 
 class ShoppingList extends Component {
   constructor (props) {
@@ -65,8 +64,16 @@ ShoppingList.propTypes = {
   item: PropTypes.object.isRequired
 }
 
-const mapStateToProps = state => ({
-  item: state.item
-})
+const mapStateToProps = state => {
+  return {
+    item: state.item
+  }
+}
 
-export default connect(mapStateToProps, { getItems })(ShoppingList)
+const mapDispatchToProps = dispatch {
+  return {
+    getItems
+  }
+}
+
+export default connect(mapStateToProps, { getItems })(ItemList)
