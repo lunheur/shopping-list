@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import AddItemButton from './AddItemButton'
 import RemoveItemButton from './RemoveItemButton'
 
-const ItemList = (items, onAddItem, onRemoveItem) => (
+const ItemList = ({ items, onAddItem, onRemoveItem }) => (
   <Container>
     <AddItemButton onAddItem={name => onAddItem(name)} />
     <ListGroup>
@@ -28,7 +28,12 @@ const ItemList = (items, onAddItem, onRemoveItem) => (
 )
 
 ItemList.propTypes = {
-  items: PropTypes.object.isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired
+    })
+  ).isRequired,
   onAddItem: PropTypes.func.isRequired,
   onRemoveItem: PropTypes.func.isRequired
 }

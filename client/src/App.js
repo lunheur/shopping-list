@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import AppNavbar from './components/AppNavbar'
-import ShoppingList from './components/shopping_list/ShoppingList'
+import ShoppingList from './containers/ShoppingList'
 
 import { Provider } from 'react-redux'
 import store from './store'
