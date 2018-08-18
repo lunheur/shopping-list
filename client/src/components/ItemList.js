@@ -3,12 +3,12 @@ import { Container, ListGroup, ListGroupItem } from 'reactstrap'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import PropTypes from 'prop-types'
 
-import AddItemButton from './AddItemButton'
 import RemoveItemButton from './RemoveItemButton'
+import ItemForm from './ItemForm'
 
 const ItemList = ({ items, onAddItem, onRemoveItem }) => (
   <Container>
-    <AddItemButton onAddItem={name => onAddItem(name)} />
+    <ItemForm placeholder='Add item' onAddItem={name => onAddItem(name)} />
     <ListGroup>
       <TransitionGroup className='shopping-list'>
         {items.map(({ id, name }) => (
