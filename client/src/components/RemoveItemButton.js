@@ -14,12 +14,12 @@ class RemoveItemButton extends Component {
   render () {
     return (
       <Button
-        className='remove-btn float-right'
-        color='danger'
+        className='float-right rounded-circle'
+        color='light'
         size='sm'
         onClick={this.handleRemove}
       >
-        {this.props.children || String.fromCharCode(215) /* 215: &times; "x" */}
+        <span className='oi oi-x' />
       </Button>
     )
   }
