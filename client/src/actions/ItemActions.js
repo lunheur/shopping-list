@@ -1,4 +1,9 @@
-import { GET_ITEMS, ADD_ITEM, DELETE_ITEM } from '../actions/types'
+import {
+  GET_ITEMS,
+  ADD_ITEM,
+  DELETE_ITEM,
+  FETCHING_ITEMS
+} from '../actions/types'
 
 export const getItems = () => {
   return {
@@ -17,5 +22,11 @@ export const deleteItem = id => {
   return {
     type: DELETE_ITEM,
     id
+  }
+}
+
+export const setItemsFetching = () => {
+  return {
+    type: FETCHING_ITEMS
   }
 }
