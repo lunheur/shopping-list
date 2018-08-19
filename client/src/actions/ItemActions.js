@@ -6,10 +6,10 @@ export const getItems = () => {
   }
 }
 
-export const addItem = name => {
+export const addItem = item => {
   return {
     type: ADD_ITEM,
-    name
+    item
   }
 }
 

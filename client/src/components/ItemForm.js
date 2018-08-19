@@ -8,6 +8,7 @@ import {
   Button
 } from 'reactstrap'
 import PropTypes from 'prop-types'
+import uuid from 'uuid'
 
 class ItemForm extends Component {
   constructor (props) {
@@ -27,7 +28,7 @@ class ItemForm extends Component {
     const name = this.state.itemName.trim().replace(/\s{2,}/, ' ')
     this.setState({ itemName: '' })
     if (!name) return
-    this.props.onAddItem(name)
+    this.props.onAddItem({ id: uuid(), name })
   }
 
   render () {

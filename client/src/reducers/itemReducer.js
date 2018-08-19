@@ -19,7 +19,7 @@ export default function (state = initialState, action) {
     case ADD_ITEM:
       return {
         ...state,
-        items: [{ id: uuid(), name: action.name }, ...state.items]
+        items: [action.item, ...state.items]
       }
     case DELETE_ITEM:
       return {
