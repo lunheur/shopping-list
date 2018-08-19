@@ -9,6 +9,11 @@ import ItemForm from './ItemForm'
 class ItemList extends Component {
   componentDidMount () {
     this.props.getItems()
+    this.timerID = setInterval(() => this.props.getItems(), 1000)
+  }
+
+  componentWillUnmount () {
+    clearInterval(this.timerID)
   }
 
   render () {
