@@ -12,20 +12,20 @@ import PropTypes from 'prop-types'
 class ItemForm extends Component {
   constructor (props) {
     super(props)
-    this.state = { itemInput: '' }
+    this.state = { itemName: '' }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange (event) {
     event.preventDefault()
-    this.setState({ itemInput: event.target.value })
+    this.setState({ [event.target.name]: event.target.value })
   }
 
   handleSubmit (event) {
     event.preventDefault()
-    const name = this.state.itemInput.trim().replace(/\s{2,}/, ' ')
-    this.setState({ itemInput: '' })
+    const name = this.state.itemName.trim().replace(/\s{2,}/, ' ')
+    this.setState({ itemName: '' })
     if (!name) return
     this.props.onAddItem(name)
   }
@@ -36,9 +36,9 @@ class ItemForm extends Component {
         <FormGroup>
           <InputGroup>
             <Input
-              name='name'
+              name='itemName'
               placeholder={this.props.placeholder}
-              value={this.state.itemInput}
+              value={this.state.itemName}
               onChange={this.handleChange}
             />
             <InputGroupAddon addonType='append'>
