@@ -14,7 +14,9 @@ export default function (state = initialState, action) {
   switch (action.type) {
     case GET_ITEMS:
       return {
-        ...state
+        ...state,
+        items: action.items,
+        isFetchingItems: false
       }
     case ADD_ITEM:
       return {

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { addItem, deleteItem } from '../actions/ItemActions'
+import { getItems, addItem, deleteItem } from '../actions/ItemActions'
 
 import ItemList from '../components/ItemList'
 
@@ -16,6 +16,9 @@ const mapDispatchToProps = dispatch => {
     },
     onRemoveItem: id => {
       dispatch(deleteItem(id))
+    },
+    getItems: () => {
+      dispatch(getItems())
     }
   }
 }
