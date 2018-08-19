@@ -1,5 +1,12 @@
 import React, { Component } from 'react'
-import { Form, Input } from 'reactstrap'
+import {
+  Form,
+  FormGroup,
+  Input,
+  InputGroup,
+  InputGroupAddon,
+  Button
+} from 'reactstrap'
 import PropTypes from 'prop-types'
 
 class ItemForm extends Component {
@@ -26,12 +33,21 @@ class ItemForm extends Component {
   render () {
     return (
       <Form onSubmit={this.handleSubmit} className='mb-3'>
-        <Input
-          name='name'
-          placeholder={this.props.placeholder}
-          value={this.state.itemInput}
-          onChange={this.handleChange}
-        />
+        <FormGroup>
+          <InputGroup>
+            <Input
+              name='name'
+              placeholder={this.props.placeholder}
+              value={this.state.itemInput}
+              onChange={this.handleChange}
+            />
+            <InputGroupAddon addonType='append'>
+              <Button color='dark' type='submit'>
+                <span className='oi oi-plus px-3' />
+              </Button>
+            </InputGroupAddon>
+          </InputGroup>
+        </FormGroup>
       </Form>
     )
   }
