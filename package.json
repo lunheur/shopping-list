@@ -18,6 +18,9 @@
     "type": "git",
     "url": "https://github.com/lunheur/shopping-list.git"
   },
+  "engines": {
+    "npm": "6.4.0"
+  },
   "devDependencies": {
     "nodemon": "^1.18.3",
     "prettier-standard": "^8.0.1"
