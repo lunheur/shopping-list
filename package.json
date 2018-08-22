@@ -19,6 +19,7 @@
     "url": "https://github.com/lunheur/shopping-list.git"
   },
   "engines": {
+    "node": "10.9.0",
     "npm": "6.4.0"
   },
   "devDependencies": {
