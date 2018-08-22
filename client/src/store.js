@@ -4,8 +4,6 @@ import rootReducer from './reducers'
 
 const middleware = [thunk]
 
-const preloadedState = {}
-
 let store
 
 if (process.env.NODE_ENV === 'production') {
