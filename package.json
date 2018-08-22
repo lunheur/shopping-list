@@ -22,6 +22,10 @@
     "node": "10.9.0",
     "npm": "6.4.0"
   },
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+  ],
   "devDependencies": {
     "nodemon": "^1.18.3",
     "prettier-standard": "^8.0.1"
